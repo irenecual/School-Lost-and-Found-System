@@ -59,12 +59,7 @@
 
     <div id="app">
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-lg">
-            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a class="text-3xl font-semibold text-gray-800" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-
+        
                 <!-- Mobile Toggle -->
                 <button class="lg:hidden block text-gray-800 focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

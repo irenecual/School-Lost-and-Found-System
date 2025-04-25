@@ -12,14 +12,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::group( attributes:['middleware' => 'admin', 'prefix' => 'admin'], routes: function () {
+    Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index']) ->name('dashboard');
+});
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

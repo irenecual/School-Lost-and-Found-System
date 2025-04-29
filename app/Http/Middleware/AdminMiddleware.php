@@ -4,8 +4,11 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
-use Auth;
+use App\Models\Role;
+//use Auth;
+
 
 class AdminMiddleware
 {
@@ -17,8 +20,9 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::user()) {
-            $role = Role::where('id', auth()->role_id)->first();
-            if($role->id ==1){
+            $role = Role::where('id', auth()->user()->role_id)->first();
+
+            if($role->id =='1'){
                 return $next($request);
             }
         }
